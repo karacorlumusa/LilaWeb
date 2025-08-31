@@ -1,0 +1,605 @@
+2025-08-31 21:20:55.511 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-31 21:20:55.578 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-31 21:20:55.713 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:20:55.725 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SiteSettings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:20:55.729 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContactRequests] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:20:55.733 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MediaItems] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:20:55.796 +03:00 [INF] User profile is available. Using 'C:\Users\karac\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-31 21:20:55.847 +03:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5000: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Normal olarak her yuva adresi (iletişim kuralı/ağ adresi/bağlantı noktası) için yalnızca bir kullanıma izin veriliyor.
+ ---> System.Net.Sockets.SocketException (10048): Normal olarak her yuva adresi (iletişim kuralı/ağ adresi/bağlantı noktası) için yalnızca bir kullanıma izin veriliyor.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-31 21:27:09.006 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-31 21:27:09.068 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-31 21:27:09.198 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:27:09.207 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SiteSettings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:27:09.210 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContactRequests] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:27:09.212 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MediaItems] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:27:09.275 +03:00 [INF] User profile is available. Using 'C:\Users\karac\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-31 21:27:09.319 +03:00 [INF] Now listening on: http://localhost:5000
+2025-08-31 21:27:09.320 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-31 21:27:09.320 +03:00 [INF] Hosting environment: Development
+2025-08-31 21:27:09.320 +03:00 [INF] Content root path: C:\Users\karac\Desktop\web ilaclama\dotnet-api\LilaIlaclama.Api
+2025-08-31 21:27:09.685 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/health - null null
+2025-08-31 21:27:09.731 +03:00 [INF] Executing endpoint 'HTTP: GET /api/health'
+2025-08-31 21:27:09.738 +03:00 [INF] Writing value of type '<>f__AnonymousType13`3' as Json.
+2025-08-31 21:27:09.743 +03:00 [INF] Executed endpoint 'HTTP: GET /api/health'
+2025-08-31 21:27:09.744 +03:00 [INF] HTTP GET /api/health responded 200 in 56.3113 ms
+2025-08-31 21:27:09.746 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/health - 200 null application/json; charset=utf-8 61.5166ms
+2025-08-31 21:28:29.477 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-31 21:28:29.538 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-31 21:28:29.665 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:28:29.676 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SiteSettings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:28:29.680 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContactRequests] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:28:29.685 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MediaItems] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:28:29.745 +03:00 [INF] User profile is available. Using 'C:\Users\karac\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-31 21:28:29.792 +03:00 [INF] Now listening on: http://localhost:5000
+2025-08-31 21:28:29.793 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-31 21:28:29.794 +03:00 [INF] Hosting environment: Development
+2025-08-31 21:28:29.795 +03:00 [INF] Content root path: C:\Users\karac\Desktop\web ilaclama\dotnet-api\LilaIlaclama.Api
+2025-08-31 21:28:37.162 +03:00 [INF] Application is shutting down...
+2025-08-31 21:29:03.854 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-31 21:29:03.936 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-31 21:29:04.098 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:29:04.110 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SiteSettings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:29:04.115 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContactRequests] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:29:04.119 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MediaItems] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:29:04.230 +03:00 [INF] User profile is available. Using 'C:\Users\karac\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-31 21:29:04.344 +03:00 [INF] Now listening on: http://localhost:5000
+2025-08-31 21:29:04.398 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-31 21:29:04.399 +03:00 [INF] Hosting environment: Development
+2025-08-31 21:29:04.401 +03:00 [INF] Content root path: C:\Users\karac\Desktop\web ilaclama\dotnet-api\LilaIlaclama.Api
+2025-08-31 21:31:20.118 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/media - null null
+2025-08-31 21:31:20.136 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:31:20.140 +03:00 [INF] HTTP OPTIONS /api/media responded 204 in 5.7413 ms
+2025-08-31 21:31:20.157 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/media - 204 null null 43.8012ms
+2025-08-31 21:31:20.172 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/media - application/json null
+2025-08-31 21:31:20.177 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:31:20.319 +03:00 [INF] Executing endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:31:20.338 +03:00 [INF] Route matched with {action = "GetAll", controller = "Media"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.String) on controller LilaIlaclama.Api.Controllers.MediaController (LilaIlaclama.Api).
+2025-08-31 21:31:20.405 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Category], [m].[CreatedAt], [m].[Date], [m].[Description], [m].[Filename], [m].[Location], [m].[Status], [m].[Title], [m].[Type], [m].[Url]
+FROM [MediaItems] AS [m]
+ORDER BY [m].[CreatedAt] DESC
+2025-08-31 21:31:20.459 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[LilaIlaclama.Api.Models.MediaItem, LilaIlaclama.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-31 21:31:20.482 +03:00 [INF] Executed action LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api) in 139.6328ms
+2025-08-31 21:31:20.484 +03:00 [INF] Executed endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:31:20.485 +03:00 [INF] HTTP GET /api/media responded 200 in 308.5740 ms
+2025-08-31 21:31:20.491 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/media - 200 null application/json; charset=utf-8 318.8575ms
+2025-08-31 21:31:21.461 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/media - application/json null
+2025-08-31 21:31:21.465 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:31:21.469 +03:00 [INF] Executing endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:31:21.470 +03:00 [INF] Route matched with {action = "GetAll", controller = "Media"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.String) on controller LilaIlaclama.Api.Controllers.MediaController (LilaIlaclama.Api).
+2025-08-31 21:31:21.522 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Category], [m].[CreatedAt], [m].[Date], [m].[Description], [m].[Filename], [m].[Location], [m].[Status], [m].[Title], [m].[Type], [m].[Url]
+FROM [MediaItems] AS [m]
+ORDER BY [m].[CreatedAt] DESC
+2025-08-31 21:31:21.527 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[LilaIlaclama.Api.Models.MediaItem, LilaIlaclama.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-31 21:31:21.529 +03:00 [INF] Executed action LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api) in 55.8946ms
+2025-08-31 21:31:21.531 +03:00 [INF] Executed endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:31:21.534 +03:00 [INF] HTTP GET /api/media responded 200 in 69.2047 ms
+2025-08-31 21:31:21.537 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/media - 200 null application/json; charset=utf-8 76.2996ms
+2025-08-31 21:31:34.379 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/media - null null
+2025-08-31 21:31:34.382 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:31:34.383 +03:00 [INF] HTTP OPTIONS /api/media responded 204 in 0.9575 ms
+2025-08-31 21:31:34.386 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/media - 204 null null 7.8565ms
+2025-08-31 21:31:34.394 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/media - multipart/form-data; boundary=----WebKitFormBoundaryxBmlwugZpTnkN79n 242249
+2025-08-31 21:31:34.398 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:31:34.409 +03:00 [INF] Executing endpoint 'LilaIlaclama.Api.Controllers.MediaController.Create (LilaIlaclama.Api)'
+2025-08-31 21:31:34.415 +03:00 [INF] Route matched with {action = "Create", controller = "Media"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(LilaIlaclama.Api.Models.MediaCreateForm) on controller LilaIlaclama.Api.Controllers.MediaController (LilaIlaclama.Api).
+2025-08-31 21:31:34.567 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Date), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [MediaItems] ([Category], [CreatedAt], [Date], [Description], [Filename], [Location], [Status], [Title], [Type], [Url])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2025-08-31 21:31:34.593 +03:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType5`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[LilaIlaclama.Api.Models.MediaItem, LilaIlaclama.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-31 21:31:34.633 +03:00 [INF] Executed action LilaIlaclama.Api.Controllers.MediaController.Create (LilaIlaclama.Api) in 215.691ms
+2025-08-31 21:31:34.668 +03:00 [INF] Executed endpoint 'LilaIlaclama.Api.Controllers.MediaController.Create (LilaIlaclama.Api)'
+2025-08-31 21:31:34.678 +03:00 [INF] HTTP POST /api/media responded 201 in 280.0226 ms
+2025-08-31 21:31:34.683 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/media - 201 null application/json; charset=utf-8 288.9064ms
+2025-08-31 21:31:34.690 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/media - null null
+2025-08-31 21:31:34.698 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:31:34.700 +03:00 [INF] HTTP OPTIONS /api/media responded 204 in 1.8293 ms
+2025-08-31 21:31:34.721 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/media - 204 null null 31.4874ms
+2025-08-31 21:31:34.727 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/media - application/json null
+2025-08-31 21:31:34.733 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:31:34.734 +03:00 [INF] Executing endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:31:34.742 +03:00 [INF] Route matched with {action = "GetAll", controller = "Media"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.String) on controller LilaIlaclama.Api.Controllers.MediaController (LilaIlaclama.Api).
+2025-08-31 21:31:34.749 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Category], [m].[CreatedAt], [m].[Date], [m].[Description], [m].[Filename], [m].[Location], [m].[Status], [m].[Title], [m].[Type], [m].[Url]
+FROM [MediaItems] AS [m]
+ORDER BY [m].[CreatedAt] DESC
+2025-08-31 21:31:34.752 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[LilaIlaclama.Api.Models.MediaItem, LilaIlaclama.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-31 21:31:34.755 +03:00 [INF] Executed action LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api) in 8.5954ms
+2025-08-31 21:31:34.757 +03:00 [INF] Executed endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:31:34.759 +03:00 [INF] HTTP GET /api/media responded 200 in 26.1676 ms
+2025-08-31 21:31:34.762 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/media - 200 null application/json; charset=utf-8 35.2497ms
+2025-08-31 21:31:40.893 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/media - null null
+2025-08-31 21:31:40.896 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:31:40.897 +03:00 [INF] HTTP OPTIONS /api/media responded 204 in 0.8904 ms
+2025-08-31 21:31:40.899 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/media - 204 null null 5.6726ms
+2025-08-31 21:31:40.902 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/media - application/json null
+2025-08-31 21:31:40.908 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:31:40.909 +03:00 [INF] Executing endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:31:40.911 +03:00 [INF] Route matched with {action = "GetAll", controller = "Media"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.String) on controller LilaIlaclama.Api.Controllers.MediaController (LilaIlaclama.Api).
+2025-08-31 21:31:40.917 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Category], [m].[CreatedAt], [m].[Date], [m].[Description], [m].[Filename], [m].[Location], [m].[Status], [m].[Title], [m].[Type], [m].[Url]
+FROM [MediaItems] AS [m]
+ORDER BY [m].[CreatedAt] DESC
+2025-08-31 21:31:40.921 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[LilaIlaclama.Api.Models.MediaItem, LilaIlaclama.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-31 21:31:40.922 +03:00 [INF] Executed action LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api) in 8.6981ms
+2025-08-31 21:31:40.924 +03:00 [INF] Executed endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:31:40.925 +03:00 [INF] HTTP GET /api/media responded 200 in 17.5606 ms
+2025-08-31 21:31:40.927 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/media - 200 null application/json; charset=utf-8 24.7628ms
+2025-08-31 21:31:46.220 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/media - null null
+2025-08-31 21:31:46.223 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:31:46.224 +03:00 [INF] HTTP OPTIONS /api/media responded 204 in 1.1064 ms
+2025-08-31 21:31:46.226 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/media - 204 null null 6.6238ms
+2025-08-31 21:31:46.230 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/media - application/json null
+2025-08-31 21:31:46.234 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:31:46.235 +03:00 [INF] Executing endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:31:46.236 +03:00 [INF] Route matched with {action = "GetAll", controller = "Media"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.String) on controller LilaIlaclama.Api.Controllers.MediaController (LilaIlaclama.Api).
+2025-08-31 21:31:46.242 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Category], [m].[CreatedAt], [m].[Date], [m].[Description], [m].[Filename], [m].[Location], [m].[Status], [m].[Title], [m].[Type], [m].[Url]
+FROM [MediaItems] AS [m]
+ORDER BY [m].[CreatedAt] DESC
+2025-08-31 21:31:46.245 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[LilaIlaclama.Api.Models.MediaItem, LilaIlaclama.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-31 21:31:46.247 +03:00 [INF] Executed action LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api) in 8.2063ms
+2025-08-31 21:31:46.248 +03:00 [INF] Executed endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:31:46.250 +03:00 [INF] HTTP GET /api/media responded 200 in 16.1987 ms
+2025-08-31 21:31:46.252 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/media - 200 null application/json; charset=utf-8 21.8114ms
+2025-08-31 21:31:54.718 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/media - null null
+2025-08-31 21:31:54.721 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:31:54.722 +03:00 [INF] HTTP OPTIONS /api/media responded 204 in 1.1279 ms
+2025-08-31 21:31:54.724 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/media - 204 null null 6.2144ms
+2025-08-31 21:31:54.727 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/media - application/json null
+2025-08-31 21:31:54.762 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:31:54.764 +03:00 [INF] Executing endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:31:54.767 +03:00 [INF] Route matched with {action = "GetAll", controller = "Media"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.String) on controller LilaIlaclama.Api.Controllers.MediaController (LilaIlaclama.Api).
+2025-08-31 21:31:54.772 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Category], [m].[CreatedAt], [m].[Date], [m].[Description], [m].[Filename], [m].[Location], [m].[Status], [m].[Title], [m].[Type], [m].[Url]
+FROM [MediaItems] AS [m]
+ORDER BY [m].[CreatedAt] DESC
+2025-08-31 21:31:54.775 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[LilaIlaclama.Api.Models.MediaItem, LilaIlaclama.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-31 21:31:54.780 +03:00 [INF] Executed action LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api) in 10.7167ms
+2025-08-31 21:31:54.782 +03:00 [INF] Executed endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:31:54.783 +03:00 [INF] HTTP GET /api/media responded 200 in 21.1726 ms
+2025-08-31 21:31:54.786 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/media - 200 null application/json; charset=utf-8 58.4022ms
+2025-08-31 21:32:04.779 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/media - null null
+2025-08-31 21:32:04.783 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:32:04.785 +03:00 [INF] HTTP OPTIONS /api/media responded 204 in 1.1393 ms
+2025-08-31 21:32:04.788 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/media - 204 null null 9.0711ms
+2025-08-31 21:32:04.795 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/media - application/json null
+2025-08-31 21:32:04.798 +03:00 [INF] CORS policy execution successful.
+2025-08-31 21:32:04.800 +03:00 [INF] Executing endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:32:04.801 +03:00 [INF] Route matched with {action = "GetAll", controller = "Media"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.String) on controller LilaIlaclama.Api.Controllers.MediaController (LilaIlaclama.Api).
+2025-08-31 21:32:04.808 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Category], [m].[CreatedAt], [m].[Date], [m].[Description], [m].[Filename], [m].[Location], [m].[Status], [m].[Title], [m].[Type], [m].[Url]
+FROM [MediaItems] AS [m]
+ORDER BY [m].[CreatedAt] DESC
+2025-08-31 21:32:04.812 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[LilaIlaclama.Api.Models.MediaItem, LilaIlaclama.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-31 21:32:04.814 +03:00 [INF] Executed action LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api) in 10.3182ms
+2025-08-31 21:32:04.816 +03:00 [INF] Executed endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-08-31 21:32:04.817 +03:00 [INF] HTTP GET /api/media responded 200 in 18.9390 ms
+2025-08-31 21:32:04.819 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/media - 200 null application/json; charset=utf-8 24.3717ms
+2025-08-31 21:34:32.294 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-31 21:34:32.358 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-31 21:34:32.488 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:34:32.501 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SiteSettings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:34:32.505 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContactRequests] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:34:32.510 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MediaItems] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 21:34:32.573 +03:00 [INF] User profile is available. Using 'C:\Users\karac\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-31 21:34:32.623 +03:00 [INF] Now listening on: http://localhost:5000
+2025-08-31 21:34:32.627 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-31 21:34:32.629 +03:00 [INF] Hosting environment: Development
+2025-08-31 21:34:32.632 +03:00 [INF] Content root path: C:\Users\karac\Desktop\web ilaclama\dotnet-api\LilaIlaclama.Api
+2025-08-31 21:53:01.700 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-08-31 21:53:01.764 +03:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-08-31 21:53:01.778 +03:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-08-31 21:53:01.780 +03:00 [INF] HTTP GET / responded 404 in 72.0577 ms
+2025-08-31 21:53:01.784 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 null application/json; charset=utf-8 85.7496ms
+2025-08-31 21:54:33.225 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-08-31 21:54:33.230 +03:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-08-31 21:54:33.231 +03:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-08-31 21:54:33.232 +03:00 [INF] HTTP GET / responded 404 in 4.1681 ms
+2025-08-31 21:54:33.233 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 null application/json; charset=utf-8 8.4522ms
+2025-08-31 21:54:39.606 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-08-31 21:54:39.611 +03:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-08-31 21:54:39.613 +03:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-08-31 21:54:39.614 +03:00 [INF] HTTP GET / responded 404 in 5.6551 ms
+2025-08-31 21:54:39.616 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 null application/json; charset=utf-8 10.2598ms
+2025-08-31 21:55:52.306 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-08-31 21:55:52.310 +03:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-08-31 21:55:52.312 +03:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-08-31 21:55:52.313 +03:00 [INF] HTTP GET / responded 404 in 3.7201 ms
+2025-08-31 21:55:52.315 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 null application/json; charset=utf-8 9.0122ms
+2025-08-31 21:59:39.292 +03:00 [INF] Application is shutting down...
+2025-08-31 22:04:17.780 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-31 22:04:17.846 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-31 22:04:17.973 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 22:04:17.984 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SiteSettings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 22:04:17.989 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContactRequests] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 22:04:17.993 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MediaItems] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 22:04:18.068 +03:00 [INF] User profile is available. Using 'C:\Users\karac\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-31 22:04:18.123 +03:00 [INF] Now listening on: http://localhost:5000
+2025-08-31 22:04:18.125 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-31 22:04:18.126 +03:00 [INF] Hosting environment: Development
+2025-08-31 22:04:18.126 +03:00 [INF] Content root path: C:\Users\karac\Desktop\web ilaclama\dotnet-api\LilaIlaclama.Api
+2025-08-31 22:07:45.589 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-08-31 22:07:45.639 +03:00 [INF] Executing endpoint 'Fallback {*path:nonfile}'
+2025-08-31 22:07:45.654 +03:00 [INF] Executed endpoint 'Fallback {*path:nonfile}'
+2025-08-31 22:07:45.656 +03:00 [INF] HTTP GET / responded 404 in 61.1886 ms
+2025-08-31 22:07:45.659 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 null application/json; charset=utf-8 70.8604ms
+2025-08-31 22:07:53.475 +03:00 [INF] Application is shutting down...
+2025-08-31 22:09:30.305 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-31 22:09:30.371 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-31 22:09:30.499 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 22:09:30.509 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SiteSettings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 22:09:30.514 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContactRequests] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 22:09:30.518 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MediaItems] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 22:09:30.581 +03:00 [INF] User profile is available. Using 'C:\Users\karac\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-31 22:09:30.625 +03:00 [INF] Now listening on: http://localhost:5000
+2025-08-31 22:09:30.627 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-31 22:09:30.627 +03:00 [INF] Hosting environment: Development
+2025-08-31 22:09:30.628 +03:00 [INF] Content root path: C:\Users\karac\Desktop\web ilaclama\dotnet-api\LilaIlaclama.Api
+2025-08-31 22:09:50.462 +03:00 [INF] Application is shutting down...
+2025-08-31 22:09:59.495 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-31 22:09:59.605 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-31 22:09:59.796 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 22:09:59.813 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SiteSettings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 22:09:59.831 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContactRequests] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 22:09:59.841 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MediaItems] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-31 22:09:59.960 +03:00 [INF] User profile is available. Using 'C:\Users\karac\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-31 22:10:00.115 +03:00 [INF] Now listening on: http://localhost:5000
+2025-08-31 22:10:00.176 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-31 22:10:00.182 +03:00 [INF] Hosting environment: Development
+2025-08-31 22:10:00.183 +03:00 [INF] Content root path: C:\Users\karac\Desktop\web ilaclama\dotnet-api\LilaIlaclama.Api
+2025-08-31 22:10:31.729 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/health - null null
+2025-08-31 22:10:31.849 +03:00 [INF] Executing endpoint 'HTTP: GET /api/health'
+2025-08-31 22:10:31.863 +03:00 [INF] Writing value of type '<>f__AnonymousType13`3' as Json.
+2025-08-31 22:10:31.876 +03:00 [INF] Executed endpoint 'HTTP: GET /api/health'
+2025-08-31 22:10:31.880 +03:00 [INF] HTTP GET /api/health responded 200 in 130.8050 ms
+2025-08-31 22:10:31.887 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/health - 200 null application/json; charset=utf-8 162.5713ms

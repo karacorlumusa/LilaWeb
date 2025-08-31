@@ -1,0 +1,79 @@
+2025-09-01 00:02:07.887 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/media - null null
+2025-09-01 00:02:07.887 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/contact - null null
+2025-09-01 00:02:07.898 +03:00 [INF] CORS policy execution successful.
+2025-09-01 00:02:07.934 +03:00 [INF] CORS policy execution successful.
+2025-09-01 00:02:07.935 +03:00 [INF] HTTP OPTIONS /api/media responded 204 in 36.8034 ms
+2025-09-01 00:02:07.936 +03:00 [INF] HTTP OPTIONS /api/contact responded 204 in 1.4432 ms
+2025-09-01 00:02:07.937 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/media - 204 null null 50.7259ms
+2025-09-01 00:02:07.945 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/contact - 204 null null 58.1563ms
+2025-09-01 00:02:07.951 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/media - application/json null
+2025-09-01 00:02:07.955 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/contact - application/json null
+2025-09-01 00:02:07.961 +03:00 [INF] CORS policy execution successful.
+2025-09-01 00:02:07.965 +03:00 [INF] CORS policy execution successful.
+2025-09-01 00:02:07.966 +03:00 [INF] Executing endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-09-01 00:02:07.969 +03:00 [INF] Executing endpoint 'LilaIlaclama.Api.Controllers.ContactController.GetAll (LilaIlaclama.Api)'
+2025-09-01 00:02:07.970 +03:00 [INF] Route matched with {action = "GetAll", controller = "Media"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.String) on controller LilaIlaclama.Api.Controllers.MediaController (LilaIlaclama.Api).
+2025-09-01 00:02:07.976 +03:00 [INF] Route matched with {action = "GetAll", controller = "Contact"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String) on controller LilaIlaclama.Api.Controllers.ContactController (LilaIlaclama.Api).
+2025-09-01 00:02:07.988 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Category], [m].[CreatedAt], [m].[Date], [m].[Description], [m].[Filename], [m].[Location], [m].[Status], [m].[Title], [m].[Type], [m].[Url]
+FROM [MediaItems] AS [m]
+ORDER BY [m].[CreatedAt] DESC
+2025-09-01 00:02:07.992 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[Email], [c].[Message], [c].[Name], [c].[Notes], [c].[Phone], [c].[Service], [c].[Status], [c].[UpdatedAt]
+FROM [ContactRequests] AS [c]
+ORDER BY [c].[CreatedAt] DESC
+2025-09-01 00:02:07.993 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[LilaIlaclama.Api.Models.MediaItem, LilaIlaclama.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-01 00:02:07.995 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[LilaIlaclama.Api.Models.ContactRequest, LilaIlaclama.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-01 00:02:07.997 +03:00 [INF] Executed action LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api) in 15.8582ms
+2025-09-01 00:02:07.998 +03:00 [INF] Executed action LilaIlaclama.Api.Controllers.ContactController.GetAll (LilaIlaclama.Api) in 8.395ms
+2025-09-01 00:02:07.999 +03:00 [INF] Executed endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-09-01 00:02:08.000 +03:00 [INF] Executed endpoint 'LilaIlaclama.Api.Controllers.ContactController.GetAll (LilaIlaclama.Api)'
+2025-09-01 00:02:08.001 +03:00 [INF] HTTP GET /api/media responded 200 in 40.3020 ms
+2025-09-01 00:02:08.002 +03:00 [INF] HTTP GET /api/contact responded 200 in 37.5942 ms
+2025-09-01 00:02:08.006 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/media - 200 null application/json; charset=utf-8 54.8881ms
+2025-09-01 00:02:08.008 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/contact - 200 null application/json; charset=utf-8 53.1176ms
+2025-09-01 00:03:05.602 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/media - null null
+2025-09-01 00:03:05.602 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/settings - null null
+2025-09-01 00:03:05.606 +03:00 [INF] CORS policy execution successful.
+2025-09-01 00:03:05.614 +03:00 [INF] CORS policy execution successful.
+2025-09-01 00:03:05.615 +03:00 [INF] HTTP OPTIONS /api/media responded 204 in 9.3954 ms
+2025-09-01 00:03:05.617 +03:00 [INF] HTTP OPTIONS /api/settings responded 204 in 2.2957 ms
+2025-09-01 00:03:05.619 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/media - 204 null null 16.7594ms
+2025-09-01 00:03:05.627 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/settings - 204 null null 24.3371ms
+2025-09-01 00:03:05.630 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/media - application/json null
+2025-09-01 00:03:05.633 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/settings - application/json null
+2025-09-01 00:03:05.636 +03:00 [INF] CORS policy execution successful.
+2025-09-01 00:03:05.638 +03:00 [INF] CORS policy execution successful.
+2025-09-01 00:03:05.639 +03:00 [INF] Executing endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-09-01 00:03:05.640 +03:00 [INF] Executing endpoint 'LilaIlaclama.Api.Controllers.SettingsController.Get (LilaIlaclama.Api)'
+2025-09-01 00:03:05.641 +03:00 [INF] Route matched with {action = "GetAll", controller = "Media"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.String, System.String, System.String) on controller LilaIlaclama.Api.Controllers.MediaController (LilaIlaclama.Api).
+2025-09-01 00:03:05.642 +03:00 [INF] Route matched with {action = "Get", controller = "Settings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller LilaIlaclama.Api.Controllers.SettingsController (LilaIlaclama.Api).
+2025-09-01 00:03:05.646 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Category], [m].[CreatedAt], [m].[Date], [m].[Description], [m].[Filename], [m].[Location], [m].[Status], [m].[Title], [m].[Type], [m].[Url]
+FROM [MediaItems] AS [m]
+ORDER BY [m].[CreatedAt] DESC
+2025-09-01 00:03:05.649 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Address], [s].[CompanyName], [s].[Description], [s].[Email], [s].[Phone], [s].[SocialFacebook], [s].[SocialInstagram], [s].[SocialLinkedin], [s].[SocialTwitter], [s].[UpdatedAt], [s].[WorkingHours]
+FROM [SiteSettings] AS [s]
+2025-09-01 00:03:05.650 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[LilaIlaclama.Api.Models.MediaItem, LilaIlaclama.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-09-01 00:03:05.652 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType8`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[LilaIlaclama.Api.Models.SiteSettings, LilaIlaclama.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-09-01 00:03:05.653 +03:00 [INF] Executed action LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api) in 9.4275ms
+2025-09-01 00:03:05.655 +03:00 [INF] Executed action LilaIlaclama.Api.Controllers.SettingsController.Get (LilaIlaclama.Api) in 8.1532ms
+2025-09-01 00:03:05.656 +03:00 [INF] Executed endpoint 'LilaIlaclama.Api.Controllers.MediaController.GetAll (LilaIlaclama.Api)'
+2025-09-01 00:03:05.658 +03:00 [INF] Executed endpoint 'LilaIlaclama.Api.Controllers.SettingsController.Get (LilaIlaclama.Api)'
+2025-09-01 00:03:05.659 +03:00 [INF] HTTP GET /api/media responded 200 in 23.1782 ms
+2025-09-01 00:03:05.660 +03:00 [INF] HTTP GET /api/settings responded 200 in 21.9833 ms
+2025-09-01 00:03:05.662 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/media - 200 null application/json; charset=utf-8 31.7832ms
+2025-09-01 00:03:05.664 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/settings - 200 null application/json; charset=utf-8 30.854ms
+2025-09-01 00:03:05.670 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/uploads/sample3.jpg - null null
+2025-09-01 00:03:05.670 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/uploads/file-1756665094450-ba8a7ba940a74fb68c3bcf5477103ce0.jpg - null null
+2025-09-01 00:03:05.670 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/uploads/sample1.jpg - null null
+2025-09-01 00:03:05.681 +03:00 [INF] HTTP GET /uploads/sample3.jpg responded 404 in 0.1733 ms
+2025-09-01 00:03:05.684 +03:00 [INF] The file /file-1756665094450-ba8a7ba940a74fb68c3bcf5477103ce0.jpg was not modified
+2025-09-01 00:03:05.688 +03:00 [INF] HTTP GET /uploads/sample1.jpg responded 404 in 0.1729 ms
+2025-09-01 00:03:05.689 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/uploads/sample3.jpg - 404 0 null 19.1641ms
+2025-09-01 00:03:05.690 +03:00 [INF] HTTP GET /uploads/file-1756665094450-ba8a7ba940a74fb68c3bcf5477103ce0.jpg responded 304 in 6.6333 ms
+2025-09-01 00:03:05.693 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/uploads/sample1.jpg - 404 0 null 22.8677ms
+2025-09-01 00:03:05.697 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/uploads/sample3.jpg, Response status code: 404
+2025-09-01 00:03:05.699 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/uploads/file-1756665094450-ba8a7ba940a74fb68c3bcf5477103ce0.jpg - 304 null image/jpeg 29.4999ms
+2025-09-01 00:03:05.703 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/uploads/sample1.jpg, Response status code: 404

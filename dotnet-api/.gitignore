@@ -1,0 +1,9 @@
+bin/
+obj/
+.vs/
+*.user
+*.db-shm
+*.db-wal
+App_Data/log-*.txt
+uploads/*
+!uploads/.gitkeep
